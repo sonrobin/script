@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>switch 연습</title>
+
+	<script type="text/javascript">
+		year = parseInt(prompt("year:",1));
+		mon = parseInt(prompt("month:",1));
+		switch(mon)
+		{
+
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				days = 30;
+			case 2:
+				if(year%4==0 && year%100 != 0 || year%400==0)
+					days = 29
+				else
+					days = 30
+				break;
+			default:
+			days = 3;
+			break;
+		}
+		document.write("now"+year+mon+day);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
