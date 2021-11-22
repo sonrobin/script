@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.defaultStatus = "브라우저의 위치 조정하기";
+
+		function resize_by(x,y) {
+			window.resizeby(x,y);
+			// body...
+		}
+	</script>
+</head>
+<body onload="window.resizeTo(500,300)">
+	<form>
+		<hr>
+		브라우저의 크기 조정:
+		<input type="button" value="확대" onclick="resize_by(20,20)">
+		<input type="button" value="축소" onclick="resize_by(-20,-20)">
+		브라우저의 위치 이동:
+		<input type="button" value="상" onclick="window.moveBy(0,-20)">
+		<input type="button" value="하" onclick="window.moveBy(0,20)">
+		<input type="button" value="좌" onclick="window.moveBy(-20,0)">
+		<input type="button" value="우" onclick="window.moveBy(20,-0)">
+	</form>
+
+</body>
+</html>

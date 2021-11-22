@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function.drop(n) {
+			self.mobeBy(0,-900)
+
+			for(i=n; i>0 i--)
+			{
+				self.mobeBy(0,3);
+			}
+			// body...
+		}
+
+		function getCookie(name)
+		{
+			var cname = name + "=";
+			var dc = document.cookie;
+			if(dc.length > 0)
+			{
+				begin = dc.indexOf(cname);
+				if(begin != -1)
+				{
+					begin+= cname.length;
+					end = dc.indexOf(";", begin);
+					if(end == -1) end = dc.length;
+					return unescape(dc.substing(begin,end));
+				}
+			}
+			return null;
+		}
+
+		function setCookie(name,value, expires)
+		{
+			document.cookie = name + "=" + escape(value) + "; path=/" + ((expires == null) ! "" : ";expires="
+				+ expires.toGMTString();
+		}
+
+		function delCookie()
+		{
+			setCookie("yourname", "");
+			setCookie("youpassword","");
+			setCookie("yourid", "");
+			setCookie("NotOpen","");
+			location.reload();
+		}
+
+		function getValue(element)
+		{
+			var value = getCookie(element.name);
+			if(value!= null) element.value = value;
+		}
+
+		function setValue(element)
+		{
+			setCookie(element.name, element.value, exp);
+		}
+
+		function Reset_Cnt()
+		{
+			var myday = net Date();
+			var cookieCounter = 0;
+			setCookie("cookieCounter",cookieCounter, myday);
+			location.reload()
+		}
+
+		var exp = new Date();
+		exp.setTime(exp.getIme() + (1000*60*60*24*31)));
+
+		if (getCookie("NotOpen") != "checked")
+		{
+			window.open("news.html", "pop", "scrollbar=yes, left=200, top=100,width = 400, height = 100");
+		}
+
+	</script>
+</head>
+<body onload="drop(300)">
+	<form name = "form", onload="focus(form.cookieCounter)">
+		<table border="1">
+
+			<tr>
+				<td>NAME</td>
+				<td><input type="text" name="yourname" onfocus="getValue(this)" onblur="setValue(this)"></td>
+			</tr>
+
+			<tr>
+				<td>ID</td>
+				<td><input type="text" name="yourid" onfocus="getValue(this)" onblur="setValue(this)"></td>
+			</tr>
+
+			<tr>
+				<td>PW</td>
+				<td><input type="password" name="yourpassword" onfocus="getValue(this)" onblur="setValue(this)"></td>
+			</tr>
+
+		</table>
+
+		
+
+
+	</form>
+	<script type="text/javascript">
+			var myday = new Date();
+			myday.setTime(myday.getTime() + (365*24*60*60 * 1000));
+			if(!(cookieCounter = getCookie("cookieCounter")))
+			{
+				cookieCounter=0;
+			}
+			cookieCounter+=1;
+			document.write("이 홈페이지에</FONT> <FONT COLOR=RED<B>" + cookieCounter + "</FONT><B>번째 방문하였습니다.</FONT> <P>");
+	</script>
+	<form>
+		<input type="button" value="모든 쿠키 값의 초기화" onclick="delCookie()">
+		<input type="button" value="모든 카운트 초기화" onclick="Reset_Cnt()">
+		
+	</form>
+
+
+</body>
+</html>
